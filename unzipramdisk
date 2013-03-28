@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gunzip -c ../$1 | cpio -i
+echo "unzipped"

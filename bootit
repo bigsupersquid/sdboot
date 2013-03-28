@@ -1,0 +1,8 @@
+#!/bin/sh
+adb reboot bootloader
+rm -f newboot.img-ramdisk.gz
+cd root
+echo 'zipping ./root to ./newboot.img-ramdisk.gz'
+zipramdisk newboot.img-ramdisk.gz
+cd ..
+fastboot -c 'mem=471M console=ttyMSM2,115200n8 androidboot.hardware=thunderc' -b 12200000 boot boot.img-kernel newboot.img-ramdisk.gz

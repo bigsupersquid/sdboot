@@ -1,4 +1,7 @@
 sdboot
 ======
 
-boot from sd/fork init
+playspace until working
+
+WARNING
+this is in process and may be broken at any commit.

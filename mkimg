@@ -1,0 +1,2 @@
+#/bin/sh
+./mkbootimg --kernel boot.img-kernel --ramdisk newboot.img-ramdisk.gz --cmdline 'mem=471M console=ttyMSM2,115200n8 androidboot.hardware=thunderc' --board thunderc --base 12200000 -o newboot.img

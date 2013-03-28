@@ -1,0 +1,4 @@
+#!/bin/bash
+
+find . | cpio -o -H newc | gzip > ../$1
+echo "zipped"
