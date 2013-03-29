@@ -1,4 +1,4 @@
 #!/bin/bash
-
-find . | cpio -o -H newc | gzip > ../$1
+echo 'zipramdisk sourcedir outputfile'
+find $1 | cpio -o -H newc | gzip > $2
 echo "zipped"

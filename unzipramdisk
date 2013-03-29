@@ -1,4 +1,7 @@
 #!/bin/bash
-
-gunzip -c ../$1 | cpio -i
+echo 'unzipramdisk sourcefile destdir'
+export TMP=$PWD
+cd $2
+gunzip -c $1 | cpio -i
+cd $TMP
 echo "unzipped"
