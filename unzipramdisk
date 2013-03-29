@@ -2,6 +2,6 @@
 echo 'unzipramdisk sourcefile destdir'
 export TMP=$PWD
 cd $2
-gunzip -c $1 | cpio -i
+gunzip -c $TMP/$1 | cpio -i
 cd $TMP
 echo "unzipped"
