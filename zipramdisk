@@ -1,7 +1,7 @@
 #!/bin/bash
-echo 'zipramdisk sourcedir outputfile'
-export TMP=$PWD
-cd $1
-find . | cpio -o -H newc | gzip > $TMP/$2
-cd $TMP
-
+#if ["$2" = '']; then
+#echo 'zipramdisk sourcedir outputfile'
+#exit
+#fi
+test "$2" != '' && (export TMP=$PWD; cd $1; find . | cpio -o -H newc | gzip > $TMP/$2; cd $TMP; exit)
+test "$2" = '' && (echo 'zipramdisk sourcedir outputfile'; exit)

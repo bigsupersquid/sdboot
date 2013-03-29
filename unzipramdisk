@@ -1,7 +1,5 @@
 #!/bin/bash
-echo 'unzipramdisk sourcefile destdir'
+
 export TMP=$PWD
-cd $2
-gunzip -c $TMP/$1 | cpio -i
-cd $TMP
-echo "unzipped"
+test "$2" != '' && (export TMP=$PWD; cd $2; gunzip -c $TMP/$1 | cpio -i; cd $TMP; exit)
+test "$2" = '' && (echo 'unzipramdisk sourcefile destdir'; exit)
