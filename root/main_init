@@ -1,5 +1,5 @@
 #!/sbin/busybox sh
 
-#exec /sbin/switch_root /sdroot /android_init
-exec chroot / /android_init
-#exec /sbin/runit-init
+exec chroot /sdroot/androot /android_init
+#exec chroot / /android_init &
+#exec /etc/runit/2

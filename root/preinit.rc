@@ -42,8 +42,8 @@ on pre-init
 	mount ext4 /sdroot/usr /usr bind multirom
 	mount ext4 /sdroot/var /var bind multirom
 
-    remove_rc_mounts
-    unlink /sbin/ueventd
-    symlink /android_init /sbin/ueventd
-    unlink /sbin/watchdogd
-    symlink /android_init /sbin/watchdogd
+#    remove_rc_mounts
+#    unlink /sbin/ueventd
+#    symlink /android_init /sbin/ueventd
+#    unlink /sbin/watchdogd
+#    symlink /android_init /sbin/watchdogd
