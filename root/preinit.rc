@@ -44,4 +44,6 @@ on pre-init
 
     remove_rc_mounts
     unlink /sbin/ueventd
-    symlink /main_init /sbin/ueventd
+    symlink /android_init /sbin/ueventd
+    unlink /sbin/watchdogd
+    symlink /android_init /sbin/watchdogd
