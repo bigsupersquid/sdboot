@@ -7,15 +7,24 @@ on pre-init
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
-	mkdir flag
+
+    mkdir /sdroot 0771 system system
+    mkdir /androot 0771 system system
+
 # show bootmgr, arg is timeout
 #    bootmgr 3
 
+    mknod /dev/block/mmcblk0p99 179 3
+    mknod /dev/block/mmcblk0p98 179 2
+
 # Mount /system rw first to give the filesystem a chance to save a checkpoint  
     mount yaffs2 /dev/block/mtdblock5 /system multirom
-    mount yaffs2 /dev/block/mtdblock5 /system ro remount multirom
+#    mount yaffs2 /dev/block/mtdblock5 /system ro remount multirom
     mount yaffs2 /dev/block/mtdblock6 /data nosuid nodev multirom
     mount yaffs2 /dev/block/mtdblock1 /cache nosuid nodev multirom
+
+    mount ext4 /dev/block/mmcblk0p99 /sdroot noatime multirom
+    mount ext4 /dev/block/mmcblk0p98 /androot noatime multirom
 
     remove_rc_mounts
     unlink /sbin/ueventd
