@@ -26,6 +26,22 @@ on pre-init
     mount ext4 /dev/block/mmcblk0p99 /sdroot noatime multirom
     mount ext4 /dev/block/mmcblk0p98 /androot noatime multirom
 
+	mount ext4 /sdroot/bin /bin bind multirom
+	mount ext4 /sdroot/etc /etc bind multirom
+	mount ext4 /sdroot/home /home bind multirom
+	mount ext4 /sdroot/lib /lib bind multirom
+	mount ext4 /sdroot/media /media bind multirom
+	mount ext4 /sdroot/opt /opt bind multirom
+	mount ext4 /sdroot/package /package bind multirom
+	mount ext4 /sdroot/root /root bind multirom
+	mount ext4 /sdroot/run /run bind multirom
+	mount ext4 /sdroot/sbin /sbin bind multirom
+	mount ext4 /sdroot/selinux /selinux bind multirom
+	mount ext4 /sdroot/srv /srv bind multirom
+	mount ext4 /sdroot/tmp /tmp bind multirom
+	mount ext4 /sdroot/usr /usr bind multirom
+	mount ext4 /sdroot/var /var bind multirom
+
     remove_rc_mounts
     unlink /sbin/ueventd
     symlink /main_init /sbin/ueventd
