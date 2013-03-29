@@ -1,4 +1,7 @@
 #!/bin/bash
 echo 'zipramdisk sourcedir outputfile'
-find $1 | cpio -o -H newc | gzip > $2
-echo "zipped"
+export TMP=$PWD
+cd $1
+find . | cpio -o -H newc | gzip > $TMP/$2
+cd $TMP
+
