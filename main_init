@@ -1,0 +1,2 @@
+#!/sbin/busybox sh
+/sbin/busybox chroot /sdroot/androot /android_init &

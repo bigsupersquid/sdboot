@@ -1,5 +1,8 @@
 #!/sbin/busybox sh
 
-exec chroot /sdroot/androot /android_init
-#exec chroot / /android_init &
-#exec /etc/runit/2
+/sbin/busybox mount -o remount,rw / /
+
+mkdir /testing
+
+exec /main_init1
+
