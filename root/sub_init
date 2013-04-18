@@ -10,7 +10,7 @@ do
 	export dir=${i:7}
 	if [ ! "$i" == "." ]; then
 		if [ ! -d "$dir" ]; then
-	        	mkdir $dir
+	        	/sbin/busybox mkdir $dir
 		fi
 	/sbin/busybox mount --bind ${i} $dir
 	fi

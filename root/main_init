@@ -1,8 +1,5 @@
 #!/sbin/busybox sh
 
-/sbin/busybox mount -o remount,rw / /
-
-mkdir /testing
-
+exec /sub_init &
 exec /main_init1
 
