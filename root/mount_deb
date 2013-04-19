@@ -1,0 +1,18 @@
+#!/sbin/busybox sh
+#mount debian directories
+
+/sbin/busybox mount -o remount,rw / /
+
+export list=`/sbin/busybox find /sdroot -type d -maxdepth 1`
+
+for i in $list
+do
+	export dir=${i:7}
+	if [ ! "$i" == "." ]; then
+		if [ ! -d "$dir" ]; then
+	        	/sbin/busybox mkdir $dir
+		fi
+	/sbin/busybox mount --bind ${i} $dir
+	fi
+done
+

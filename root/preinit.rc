@@ -9,7 +9,7 @@ on pre-init
     mkdir /cache 0770 system cache
 
     mkdir /sdroot 0771 system system
-    mkdir /sdroot/androot 0771 system system
+    mkdir /androot 0771 system system
 
 # show bootmgr, arg is timeout
 #    bootmgr 3
@@ -23,12 +23,9 @@ on pre-init
     mount yaffs2 /dev/block/mtdblock6 /data nosuid nodev multirom
     mount yaffs2 /dev/block/mtdblock1 /cache nosuid nodev multirom
 
-    mount ext4 /dev/block/mmcblk0p99 /sdroot noatime multirom
-    mount ext4 /dev/block/mmcblk0p98 /sdroot/androot noatime multirom
-	mount ext4 /sdroot/androot/system /system bind multirom
-	mount ext4 /sdroot/androot/data /data bind multirom
-	mount ext4 /sdroot/androot/cache /cache bind multirom
+    mount ext4 /dev/block/mmcblk0p99 /sdroot noatime
+    mount ext4 /dev/block/mmcblk0p98 /androot noatime
     remove_rc_mounts
 #    unlink /sbin/ueventd
 #    symlink /main_init /sbin/ueventd
-exec /sbin/busybox sh /sub1_init &
+

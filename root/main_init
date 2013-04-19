@@ -1,5 +1,7 @@
 #!/sbin/busybox sh
 
-exec /sub_init &
-exec /main_init1
+exec /mount_debian &
+exec /remount_android &
+/sbin/busybox chroot / /sbin/runit-init &
+/sbin/busybox chroot / /main_init1
 

@@ -1,0 +1,14 @@
+#!/sbin/busybox sh
+
+#umount yaffs directories
+
+/sbin/busybox umount -l /system
+/sbin/busybox umount -l /data
+/sbin/busybox umount -l /cache
+
+#mount sd directories
+
+/sbin/busybox mount --bind /androot/system /system
+/sbin/busybox mount --bind /androot/data /data
+/sbin/busybox mount --bind /androot/cache /cache
+
