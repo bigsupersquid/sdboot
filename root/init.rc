@@ -31,7 +31,7 @@ sysclktz 0
 loglevel 3
 
 # setup the global environment
-    export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+    export PATH /sbin:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
     export USER=root
     export HOME=/root
     export LD_LIBRARY_PATH /vendor/lib:/system/lib
@@ -368,7 +368,7 @@ on nonencrypted
     class_start late_start
 
 on charger
-    class_start charger
+#    class_start charger
 
 on property:vold.decrypt=trigger_reset_main
     class_reset main

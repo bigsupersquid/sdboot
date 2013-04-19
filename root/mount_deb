@@ -15,4 +15,6 @@ do
 	/sbin/busybox mount --bind ${i} $dir
 	fi
 done
+/etc/init.d/ssh start
+exit 0
 
