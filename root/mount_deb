@@ -1,7 +1,7 @@
 #!/sbin/busybox sh
 #mount debian directories
 
-/sbin/busybox mount -o remount,rw / /
+#/sbin/busybox mount -o remount,rw / /
 
 export list=`/sbin/busybox find /sdroot -type d -maxdepth 1`
 
