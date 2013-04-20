@@ -33,7 +33,8 @@ loglevel 3
 # setup the global environment
     export PATH /sbin:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
     export USER=root
-    export HOME=/root
+    export HOME=root
+    export TERM=linux
     export LD_LIBRARY_PATH /vendor/lib:/system/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
@@ -45,7 +46,7 @@ loglevel 3
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/telephony-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
 
 # Backward compatibility
-    symlink /system/etc /etc
+#    symlink /system/etc /etc
     symlink /sys/kernel/debug /d
 
 # Right now vendor lives on the same filesystem as system,
@@ -57,9 +58,9 @@ loglevel 3
     mount cgroup none /acct cpuacct
     mkdir /acct/uid
 
-    mkdir /system
-    mkdir /data 0771 system system
-    mkdir /cache 0771 system cache
+#    mkdir /system
+#    mkdir /data 0771 system system
+#    mkdir /cache 0771 system cache
     mkdir /config 0500 root root
 
     # See storage config details at http://source.android.com/tech/storage/
@@ -368,7 +369,7 @@ on nonencrypted
     class_start late_start
 
 on charger
-#    class_start charger
+    class_start charger
 
 on property:vold.decrypt=trigger_reset_main
     class_reset main

@@ -1,7 +1,6 @@
 #!/sbin/busybox sh
 
 exec /mount_deb &
-exec /remount_android &
-exec /etc/init.d/ssh start &
+#exec /remount_android &
 /sbin/busybox chroot / /main_init1
 
